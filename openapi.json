@@ -1,0 +1,111 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API Documentation",
+    "description": "API documentation for managing student registrations",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/Students": {
+      "get": {
+        "summary": "Get all Students",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new Student",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "name": "John Doe",
+                "age": 25,
+                "paymentStatus": true,
+                "residence": "Cityville",
+                "cityAccessPermit": true
+              }
+            }
+          },
+          "required": true,
+          "description": "Input fields for creating a new Student",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "age": { "type": "number" },
+              "paymentStatus": { "type": "boolean" },
+              "residence": { "type": "string" },
+              "cityAccessPermit": { "type": "boolean" }
+            },
+            "required": ["name", "age", "paymentStatus", "residence", "cityAccessPermit"]
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "{message: Student registered successfully.}"
+          }
+        }
+      }
+    },
+    "/api/Students/{id}": {
+      "get": {
+        "summary": "Get a specific Student by ID",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "summary": "Update a Student by ID",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Update"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a Student by ID",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "delete"
+          }
+        }
+      }
+    }
+  }
+}
