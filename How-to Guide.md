@@ -27,7 +27,7 @@
 
 2. **Start the Application:**
     ```bash
-    node app.js
+    node index.js
     ```
 
     The server will start running on [http://localhost:3000](http://localhost:3000).
