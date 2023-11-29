@@ -4,8 +4,8 @@
 
 1. **Clone the Repository:**
     ```bash
-    git clone https://github.com/yourusername/your-repo.git
-    cd your-repo
+    git clone https://github.com/Khalididies/Student-Registration-System.git
+    cd Student-Registration-System
     ```
 
 2. **Create a `.env` file:**
